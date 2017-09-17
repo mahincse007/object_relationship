@@ -1,0 +1,6 @@
+c:\users\mahin\documents\visual studio 2017\Projects\ConsoleAppObject\ConsoleAppObject\bin\Debug\ConsoleAppObject.exe.config
+c:\users\mahin\documents\visual studio 2017\Projects\ConsoleAppObject\ConsoleAppObject\bin\Debug\ConsoleAppObject.exe
+c:\users\mahin\documents\visual studio 2017\Projects\ConsoleAppObject\ConsoleAppObject\bin\Debug\ConsoleAppObject.pdb
+c:\users\mahin\documents\visual studio 2017\Projects\ConsoleAppObject\ConsoleAppObject\obj\Debug\ConsoleAppObject.csprojResolveAssemblyReference.cache
+c:\users\mahin\documents\visual studio 2017\Projects\ConsoleAppObject\ConsoleAppObject\obj\Debug\ConsoleAppObject.exe
+c:\users\mahin\documents\visual studio 2017\Projects\ConsoleAppObject\ConsoleAppObject\obj\Debug\ConsoleAppObject.pdb
