@@ -11,6 +11,7 @@ namespace ConsoleAppObject
         List<Products> productList = new List<Products> { };
         List<Purchase> userCart = new List<Purchase> { };
         Dictionary<int, int> productQuantity = new Dictionary<int, int>();
+        Dictionary<int, int> cartQuantity = new Dictionary<int, int>();
 
         public Pos()
         {
@@ -51,7 +52,6 @@ namespace ConsoleAppObject
             Console.WriteLine("\nInput quantity");
             var quantityInput = Int32.Parse(Console.ReadLine());
 
-
             UpdateCart(productList[itemInput - 1], quantityInput);
         }
 
@@ -59,17 +59,15 @@ namespace ConsoleAppObject
         {
             var cart = new Purchase();
             cart.productInfo = item;
-            cart.userQuantity = quantity;
 
-            bool itemExsit = userCart.Exists(pd => pd.productInfo.productId == item.productId );
-            if (itemExsit)
+            if (cartQuantity.ContainsKey(item.productId))
             {
-                var ListIndex = productList.FindIndex(pd => pd.productId == item.productId);
-                userCart[ListIndex].userQuantity += quantity;
+                cartQuantity[item.productId] += quantity;
             }
             else
             {
                 userCart.Add(cart);
+                cartQuantity[item.productId] = quantity;
             }
             
             productQuantity[item.productId] -= quantity;
@@ -85,8 +83,8 @@ namespace ConsoleAppObject
             double total = 0; 
             foreach (var item in userCart)
             {
-                Console.WriteLine(count + 1 + ". \t " + item.productInfo.ProductName + " \t " + item.productInfo.Price + " \t " + item.userQuantity + " \t\t " + item.productInfo.Price * item.userQuantity);
-                total += item.productInfo.Price * item.userQuantity;
+                Console.WriteLine(count + 1 + ". \t " + item.productInfo.ProductName + " \t " + item.productInfo.Price + " \t " + cartQuantity[item.productInfo.productId] + " \t\t " + item.productInfo.Price * cartQuantity[item.productInfo.productId]);
+                total += item.productInfo.Price * cartQuantity[item.productInfo.productId];
                 count++;
             }
             Start();

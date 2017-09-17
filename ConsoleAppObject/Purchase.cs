@@ -9,6 +9,5 @@ namespace ConsoleAppObject
     class Purchase
     {
         public Products productInfo;
-        public int userQuantity;
     }
 }
