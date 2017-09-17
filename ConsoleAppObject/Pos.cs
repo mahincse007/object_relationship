@@ -41,17 +41,13 @@ namespace ConsoleAppObject
 
         public void UserInput()
         {
-            Console.WriteLine("\nSelect your option");
-            var itemInput = Int32.Parse(Console.ReadLine());
-
+            var itemInput = GetInput("\nSelect your option");
             if (itemInput == 0)
             {
                 CheckOut();
             }
 
-            Console.WriteLine("\nInput quantity");
-            var quantityInput = Int32.Parse(Console.ReadLine());
-
+            var quantityInput = GetInput("\nInput quantity");
             UpdateCart(productList[itemInput - 1], quantityInput);
         }
 
@@ -90,5 +86,10 @@ namespace ConsoleAppObject
             Start();
         }
 
+        public int GetInput(string message)
+        {
+            Console.WriteLine(message);
+            return Convert.ToInt32(Console.ReadLine());
+        }
     }
 }
